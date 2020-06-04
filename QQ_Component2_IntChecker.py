@@ -1,8 +1,8 @@
-# Quiz Quest Component 1 - User Input
+# Quiz Quest Component 2 - Integer Checker
 
 # To Do
-# - Get Input from user
-# - Make sure its valid for the given scenarios
+# - Get Integer Input from user
+# - Make sure its valid for the given scenario
 
 #Functions go here
 def intcheck(low = None,high = None, errormessage):
