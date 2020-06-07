@@ -1,4 +1,4 @@
-# Quiz Quest Component 1 String Checker v1 (My code)
+# Quiz Quest Component 1 String Checker v1 (Mrs Gottschalks Code)
 
 # To Do
 # - Get string input from user
