@@ -4,17 +4,25 @@
 # - Get string input from user
 # - Check if it is valid in the given scenario
 
-def StringCheck(question,):
+
+# This function was made by Mrs Gottschalk
+def string_check(question, to_check):
 
     valid = False
     while valid == False:
-        response = input(question)
+        response = input(question).lower()
 
-        if response.lower() == "yes" or response.lower() == "y":
-            return "yes"
-        elif response.lower() == "no" or response.lower() == "n":
-            return "no"
-        else:
-            print("Please enter Yes/No")
+        for item in to_check:
+            if response == item:
+                return response
+            elif response == item[0]:
+                return item
+
+
+
+
+# Main Routine
+
+yes_no_for_string_check = ["yes","no"]
 
 
