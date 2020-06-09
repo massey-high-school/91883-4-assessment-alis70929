@@ -17,12 +17,24 @@ def string_check(question, to_check):
                 return response
             elif response == item[0]:
                 return item
-
+        print("Please enter Yes/No")
 
 
 
 # Main Routine
 
 yes_no_for_string_check = ["yes","no"]
+times_table_all = string_check("Would you like to do all 12 times tables at once?", yes_no_for_string_check)
+if times_table_all == "yes":
+    print("You have chosen to practice all times tables at once")
+else:
+    print("You have chosen to do a specific times tables")
+print()
+continuous = string_check("Would you like to answer questions continuously?", yes_no_for_string_check)
+if continuous == "yes":
+    print("You have chosen to do questions continuously")
+else:
+    print("You have chosen to do a specific amount of rounds")
+print()
 
 
