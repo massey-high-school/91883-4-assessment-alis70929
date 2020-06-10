@@ -4,15 +4,16 @@
 # - Get Integer Input from user
 # - Make sure its valid for the given scenario
 
-#Functions go here
-def intcheck(low = None,high = None, errormessage):
+
+# Functions go here
+def intcheck(question, low = None, high = None):
     valid = False
     # Error messages
-    if low is not None and high is not None: # Error message if variables are given
+    if low is not None and high is not None:  # Error message if variables are given
         error = "Please enter a whole number between {} and {} (Inclusive) ".format(low,high)
-    elif low is not None and high is None: # Error message if only low variable is given
+    elif low is not None and high is None:  # Error message if only low variable is given
         error = "Please enter a whole number equal to or above {} ".format(low)
-    elif low is not None and high is None: # Error message if only high variable is given
+    elif low is not None and high is None:  # Error message if only high variable is given
         error = "Please enter a whole number equal to or below {} ".format(high)
     else: # Error message if no variables are given
         error = "please enter a whole number"
@@ -39,10 +40,15 @@ def intcheck(low = None,high = None, errormessage):
 
 
 # Main code goes here
+# Loop for testing purposes
+loop = True
+while loop:
+    # What times table would you like to do question
+    #times_table_choice = intcheck("Which times table would you like to practice?(1 to 12 times tables): ", 1, 12)
+    #print("So you have chosen to do the {} times tables".format(times_table_choice))
 
-# Loop What times table would you like to do question until user gives a valid answer
-times_tables_choice_valid = False
-while times_tables_choice_valid == False:
-    times_tables_choice = input("Which times table up to 12 would you like to practice or would you like to practice all of them together")
-    if times_tables_choice.lower() == "all" or times_tables_choice.lower() == "a":
-        print("You have chosen ")
+    # Users answer to questions
+    user_answer = intcheck("What is your answer: ", 1)
+
+    # How many questions the user wants to do
+    #amount_of_questions = intcheck("How many questions: ", 1)
