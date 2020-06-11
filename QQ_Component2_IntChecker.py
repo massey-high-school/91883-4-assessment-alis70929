@@ -44,11 +44,11 @@ def intcheck(question, low = None, high = None):
 loop = True
 while loop:
     # What times table would you like to do question
-    #times_table_choice = intcheck("Which times table would you like to practice?(1 to 12 times tables): ", 1, 12)
-    #print("So you have chosen to do the {} times tables".format(times_table_choice))
+    times_table_choice = intcheck("Which times table would you like to practice?(1 to 12 times tables): ", 1, 12)
+    print("So you have chosen to do the {} times tables".format(times_table_choice))
 
     # Users answer to questions
     user_answer = intcheck("What is your answer: ", 1)
 
     # How many questions the user wants to do
-    #amount_of_questions = intcheck("How many questions: ", 1)
+    amount_of_questions = intcheck("How many questions: ", 1)
