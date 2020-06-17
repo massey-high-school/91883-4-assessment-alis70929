@@ -1,7 +1,9 @@
-# Quiz Quest Complete Program, Putting Components Togther as i go
+# Quiz Quest Complete Program, Putting Components Together as i go
 
 # To Do
 # - Add components to this code, make sure they work together properly
+# - Components added
+#   - 1, 2, 3
 
 # Imports are here
 import random
