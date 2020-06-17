@@ -1,9 +1,9 @@
-# Quiz Quest Complete Program, Putting Components Together as i go
+# Quiz Quest Complete Program v1, Putting Components Together as i go
 
 # To Do
 # - Add components to this code, make sure they work together properly
 # - Components added
-#   - 1, 2, 3, 4
+#   - 1, 2, 3, 4, 5
 
 # Imports are here
 import random
@@ -46,6 +46,9 @@ def intcheck(question, low=None, high=None):
         try:
             # Gets user input
             response = int(input(question.format(low, high)))
+            # If response is the exit code return the exit code to main code
+            if response == 1111:
+                return response
             # Checks number is not too low
             if low is not None and response < low:
                 print(error)  # If its too low  display error
@@ -71,27 +74,47 @@ all_or_specific = string_check("All Times tables?:", yes_no_for_string_check)
 if all_or_specific == "no":
     specific_times_table = intcheck("Which Times Table?:", 1, 12)  # Here the user chooses a specific times table
 
-# Gap for rounds loop
-# Sets the first number in the equation
-if all_or_specific == "no":
-    num1 = specific_times_table # The first number in the equation will be the chosen times table if the user chose to do so
+continuous = string_check("Continuous?: ", yes_no_for_string_check)
+if continuous == "no":
+    questions_to_ask = intcheck("Amount of questions?: ", 1)
+    print("You have chosen to do {} questions".format(questions_to_ask))
 else:
-    num1 = random.randint(1, 12) # Random if the user chose to do all 12 at once
+    questions_to_ask = 1
+    print("you have chosen continuous")
 
-num2 = random.randint(1,12) # The second number in the equation will always be random
+questions_answered = 0
+while questions_answered < questions_to_ask:
+    # If user chose continuous amke it so questions answered will never catch up to questions asked
+    if continuous == "yes":
+        questions_to_ask += 1
+    # count how many questions the user has asked
+    questions_answered += 1
+    # Says what question the user is on
+    print("Question {}".format(questions_answered))
+    # Sets the first number in the equation
+    if all_or_specific == "no":
+        num1 = specific_times_table # The first number in the equation will be the chosen times table if the user chose to do so
+    else:
+        num1 = random.randint(1, 12) # Random if the user chose to do all 12 at once
 
-# Calclulating the answer to the generated question
-actual_answer = num1 * num2
+    num2 = random.randint(1,12) # The second number in the equation will always be random
 
-# Display Question
-print("{} x {} = ?".format(num1, num2))
+    # Calclulating the answer to the generated question
+    actual_answer = num1 * num2
 
-# Ask user for their answer
-user_answer = intcheck("What is the answer?:", 1)
+    # Display Question
+    print("{} x {} = ?".format(num1, num2))
 
-# If user gets it right congratulate them, if not tell them right answer
-if user_answer == actual_answer:
-    print("Wow, very nice you got it right. Well done.")
-else:
-    print("Oh no, you got it wrong, The right answer is {}".format(actual_answer))
+    # Ask user for their answer
+    user_answer = intcheck("What is the answer?:", 1)
+    # If exit code is entered change the conditions so the loop ends
+    if user_answer == 1111:
+        questions_answered = questions_to_ask
+    # If user gets it right congratulate them, if not tell them right answer
+    elif user_answer == actual_answer:
+        print("Wow, very nice you got it right. Well done.")
+    else:
+        print("Oh no, you got it wrong, The right answer is {}".format(actual_answer))
+
+# This is the place for the summary
 
