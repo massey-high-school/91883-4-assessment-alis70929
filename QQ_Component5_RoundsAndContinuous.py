@@ -60,22 +60,24 @@ def intcheck(question, low=None, high=None):
             print()
 
 # Main code here
-yes_no_for_string_check = ["yes"," no"]
+yes_no_for_string_check = ["yes","no"]
 continuous = string_check("Continuous?: ", yes_no_for_string_check)
 if continuous == "no":
-    questions_asked = input("Amount of questions?: ")
+    questions_to_ask = intcheck("Amount of questions?: ", 1)
+    print("You have chosen to do {} questions".format(questions_to_ask))
 else:
-    questions_asked = 1
+    questions_to_ask = 1
+    print("you have chosen continuous")
 
 questions_answered = 0
-while questions_answered <= questions_asked:
+while questions_answered < questions_to_ask:
     if continuous == "yes":
-        questions_asked += 1
+        questions_to_ask += 1
     questions_answered += 1
     print("Question {}".format(questions_answered))
     user_answer = intcheck("What is your answer?")
     if user_answer == 1111:
-        questions_answered = questions_asked + 1
+        questions_answered = questions_to_ask
 
 print("Thank you for playing")
 
