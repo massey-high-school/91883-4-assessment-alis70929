@@ -3,7 +3,7 @@
 # To Do
 # - Add components to this code, make sure they work together properly
 # - Components added
-#   - 1, 2, 3
+#   - 1, 2, 3, 4
 
 # Imports are here
 import random
@@ -83,6 +83,15 @@ num2 = random.randint(1,12) # The second number in the equation will always be r
 # Calclulating the answer to the generated question
 actual_answer = num1 * num2
 
-# Display Question and Answer
-print("{} x {} = {}".format(num1, num2, actual_answer))
+# Display Question
+print("{} x {} = ?".format(num1, num2))
+
+# Ask user for their answer
+user_answer = intcheck("What is the answer?:", 1)
+
+# If user gets it right congratulate them, if not tell them right answer
+if user_answer == actual_answer:
+    print("Wow, very nice you got it right. Well done.")
+else:
+    print("Oh no, you got it wrong, The right answer is {}".format(actual_answer))
 
