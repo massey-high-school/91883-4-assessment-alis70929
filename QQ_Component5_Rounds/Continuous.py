@@ -1,12 +1,8 @@
-# Quiz Quest Complete Program, Putting Components Together as i go
+# Quiz Quest Component 5 Rounds/Continuous system
 
 # To Do
-# - Add components to this code, make sure they work together properly
-# - Components added
-#   - 1, 2, 3, 4
-
-# Imports are here
-import random
+# - Change between rounds and continuous
+# - Make sure continuous never ends and rounds ends at the specified amount
 
 # Functions go here
 # This function was made by Mrs Gottschalk, It checks if a string is valid for the given list(to_check)
@@ -46,6 +42,8 @@ def intcheck(question, low=None, high=None):
         try:
             # Gets user input
             response = int(input(question.format(low, high)))
+            if response == 1111:
+                return response
             # Checks number is not too low
             if low is not None and response < low:
                 print(error)  # If its too low  display error
@@ -61,37 +59,27 @@ def intcheck(question, low=None, high=None):
             print(error)
             print()
 
-# Main code goes here
-
-# This is the a list for the string checker
-yes_no_for_string_check = ["yes", "no"]
-
-# Ask user which times table they would like to practice ( all 12 or a specific one)
-all_or_specific = string_check("All Times tables?:", yes_no_for_string_check)
-if all_or_specific == "no":
-    specific_times_table = intcheck("Which Times Table?:", 1, 12)  # Here the user chooses a specific times table
-
-# Gap for rounds loop
-# Sets the first number in the equation
-if all_or_specific == "no":
-    num1 = specific_times_table # The first number in the equation will be the chosen times table if the user chose to do so
+# Main code here
+yes_no_for_string_check = ["yes"," no"]
+continuous = string_check("Continuous?: ", yes_no_for_string_check)
+if continuous == "no":
+    questions_asked = input("Amount of questions?: ")
 else:
-    num1 = random.randint(1, 12) # Random if the user chose to do all 12 at once
+    questions_asked = 1
 
-num2 = random.randint(1,12) # The second number in the equation will always be random
+questions_answered = 0
+while questions_answered <= questions_asked:
+    if continuous == "yes":
+        questions_asked += 1
+    questions_answered += 1
+    print("Question {}".format(questions_answered))
+    user_answer = intcheck("What is your answer?")
+    if user_answer == 1111:
+        questions_answered = questions_asked + 1
 
-# Calclulating the answer to the generated question
-actual_answer = num1 * num2
+print("Thank you for playing")
 
-# Display Question
-print("{} x {} = ?".format(num1, num2))
 
-# Ask user for their answer
-user_answer = intcheck("What is the answer?:", 1)
 
-# If user gets it right congratulate them, if not tell them right answer
-if user_answer == actual_answer:
-    print("Wow, very nice you got it right. Well done.")
-else:
-    print("Oh no, you got it wrong, The right answer is {}".format(actual_answer))
+
 
