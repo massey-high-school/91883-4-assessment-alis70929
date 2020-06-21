@@ -13,15 +13,5 @@ listcount = 0
 print("Question #|Question |     Users Answer    |    Correct Answer      |Correct?  |")
 
 for item in actual_answers:
-    if correct_incorrect[listcount] == "correct":
-        print("Question {}|  {}  |         {}          |          {}            |{}   |".format(listcount + 1 , questions[listcount] ,users_answers[listcount], actual_answers[listcount], correct_incorrect[listcount]))
-    else:
-        print("Question {}|  {}  |         {}          |          {}            |{} |".format(listcount + 1,
-                                                                                                 questions[listcount],
-                                                                                                 users_answers[
-                                                                                                     listcount],
-                                                                                                 actual_answers[
-                                                                                                     listcount],
-                                                                                                 correct_incorrect[
-                                                                                                     listcount]))
+    print("Question {}|  {}  |         {}          |          {}            |{}   |".format(listcount + 1 , questions[listcount] ,users_answers[listcount], actual_answers[listcount], correct_incorrect[listcount]))
     listcount += 1

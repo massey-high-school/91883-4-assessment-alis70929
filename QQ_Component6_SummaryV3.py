@@ -4,6 +4,18 @@
 # - Store the generated questions, the users answer, the actual answer and whether or not the user got it right
 # - Display the stored data from each round in a nice table
 
+def summary(titles,list1,list2 = None,list3 = None,list4 = None):
+    if list2 is None and list3 is None and list4 is None:
+        row = "| {} |"
+    elif list2 is not None and list3 is None and list4 is None:
+        row = "| {} | {} |"
+    elif list2 is not None and list3 is None and list4 is None:
+        row = "| {} | {} | {} |"
+    
+
+    for item in list1:
+
+
 
 
 questions = ["2 x 3", "3 x 6", "12 x 12"]
