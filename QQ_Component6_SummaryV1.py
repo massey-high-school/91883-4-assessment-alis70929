@@ -5,8 +5,8 @@
 # - Display the stored data from each round in a nice table
 
 questions = ["2 x 3", "3 x 6"]
-actual_answers = ["6 ", "18"]
-users_answers = ["9 ", "18"]
+actual_answers = [6, 18]
+users_answers = [9, 18]
 correct_incorrect = ["correct  ", "incorrect"]
 
 listcount = 0

@@ -6,24 +6,14 @@
 
 
 
-questions = ["2 x 3", "3 x 6", "12 x 12"]
-actual_answers = ["6  ", "18 ","144"]
-users_answers = ["9  ", "18 ", "144"]
-correct_incorrect = ["correct", "incorrect"]
+questions = ["2 x 3", "3 x 6","12 x 12"]
+actual_answers = [6 , 18, 144]
+users_answers = [9 , 18, 144]
+correct_incorrect = ["correct", "incorrect", "correct"]
 
 listcount = 0
-print("Question #|Question |     Users Answer    |    Correct Answer      |Correct?  |")
+print("Question  #|Question |Users Answer|Correct Answer|Correct?  |")
 
 for item in actual_answers:
-    if correct_incorrect[listcount] == "correct":
-        print("Question {}|  {}  |         {}         |          {}           |{}   |".format(listcount + 1 , questions[listcount] ,users_answers[listcount], actual_answers[listcount], correct_incorrect[listcount]))
-    else:
-        print("Question {}|  {}  |         {}         |          {}           |{} |".format(listcount + 1,
-                                                                                                 questions[listcount],
-                                                                                                 users_answers[
-                                                                                                     listcount],
-                                                                                                 actual_answers[
-                                                                                                     listcount],
-                                                                                                 correct_incorrect[
-                                                                                                     listcount]))
-    listcount += 1
+    print("Question {1:>{0}}| {3:>{2}} | {5:>{4}} | {7:>{6}} | {9:>{8}}|".format(2,listcount + 1 , 7 ,questions[listcount] ,10 ,users_answers[listcount],12, actual_answers[listcount],9, correct_incorrect[listcount]))
+    listcount +=1
