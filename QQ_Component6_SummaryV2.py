@@ -12,8 +12,18 @@ users_answers = [9 , 18, 144]
 correct_incorrect = ["Correct", "Incorrect", "Correct"]
 
 listcount = 0
-print("Question # |Question |Users Answer|Correct Answer|Correct?  |")
+print("Question  #|Question |Users Answer|Correct Answer|Correct?  |")
 
 for item in actual_answers:
-    print("Question {1:<{0}}| {3:<{2}} | {5:<{4}} | {7:<{6}} |{9:<{8}}|".format(2,listcount + 1 , 7 ,questions[listcount] ,10 ,users_answers[listcount],12, actual_answers[listcount],10, correct_incorrect[listcount]))
+    print("Question {1:>{0}}| {3:<{2}} | {5:<{4}} | {7:<{6}} |{9:<{8}}|".format(2,listcount + 1 ,
+                                                                                7 ,questions[listcount] ,
+                                                                                10 ,users_answers[listcount],
+                                                                                12, actual_answers[listcount],
+                                                                                10, correct_incorrect[listcount]))
+
+
     listcount +=1
+
+print()
+print("{}/{} questions were answered incorrectly".format(correct_incorrect.count("Incorrect"), len(correct_incorrect)))
+print("{}/{} questions were answered correctly".format(correct_incorrect.count("Correct"),len(correct_incorrect)))

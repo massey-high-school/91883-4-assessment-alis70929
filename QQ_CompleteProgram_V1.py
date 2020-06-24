@@ -154,6 +154,16 @@ print("Question  #|Question |Users Answer|Correct Answer|Correct?  |")  # Prints
 # Creates a summary table
 for item in correct_incorrect:
     # Creates a row that is evenly spaced and has the question number, the question, the users answer for that question, the actual answer and if the user was correct or incorrect
-    print("Question {1:<{0}}| {3:<{2}} | {5:<{4}} | {7:<{6}} |{9:<{8}}|".format(2,listcount + 1 , 7 ,questions[listcount] ,10 ,users_answers[listcount],12, actual_answers[listcount],10, correct_incorrect[listcount]))
-    listcount += 1 # Make it so the next question summary row is printed
+    print("Question {1:>{0}}| {3:<{2}} | {5:<{4}} | {7:<{6}} |{9:<{8}}|".format(2, listcount + 1,
+                                                                                7, questions[listcount],
+                                                                                10, users_answers[listcount],
+                                                                                12, actual_answers[listcount],
+                                                                                10, correct_incorrect[listcount]))
+    listcount += 1  # Make it so the next question summary row is printed
 
+print()
+print("{}/{} questions were answered incorrectly".format(correct_incorrect.count("Incorrect"), len(correct_incorrect)))
+print("{}/{} questions were answered correctly".format(correct_incorrect.count("Correct"),len(correct_incorrect)))
+
+if correct_incorrect.count("Correct") == len(correct_incorrect):
+    qq_statement("!!! Well Done, You answered all the questions correctly !!!","!")
