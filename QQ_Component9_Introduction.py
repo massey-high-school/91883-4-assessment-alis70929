@@ -34,3 +34,5 @@ if introduction == "yes":
           "- You can chose to practice all tweleve times tables or practice a specific times table \n"
           "- You can chose to answer questions continuously or set a certain amount of questions you want to answer \n"
           "- You then have to answer questions until you answer all the questions given or if you enter the exit code(1111)")
+    print()
+    input("Press <enter> to continue")
