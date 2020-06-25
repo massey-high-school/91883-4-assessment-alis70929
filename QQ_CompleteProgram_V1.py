@@ -85,6 +85,7 @@ print("********* Welcome to the 12 times tables practice program ********* ") # 
 # Asks if they want to read the instructions
 introduction = string_check("Would you like to read the instructions(Recommended for first time users)",
                             yes_no_for_string_check)
+
 # If they do want to read the instructions then display the instructions otherwise continue to main code
 if introduction == "yes":
     print()
@@ -104,25 +105,32 @@ while keepgoing == "yes":
     users_answers = []  # Stores the users answers
     correct_incorrect = []  # Stores if they were correct or incorrect
 
+    print()
     # Ask user which times table they would like to practice ( all 12 or a specific one)
-    all_or_specific = string_check("All Times tables?:", yes_no_for_string_check)
+    all_or_specific = string_check("Do you want to practice all 12 times tables:", yes_no_for_string_check)
     if all_or_specific == "no":
-        specific_times_table = intcheck("Which Times Table?:", 1, 12)  # Here the user chooses a specific times table
+        specific_times_table = intcheck("Then which times table do you wish to practice?(1 - 12):", 1, 12)  # Here the user chooses a specific times table
         # Displays which times table they chose
         print("You have chosen to do the {} times tables".format(specific_times_table))
     else:
         print("You have chosen to do all times tables")  # Displays if they have chosen all times table
 
     # Ask user wheher they want to answer questions continuously or a specific amount
-    continuous = string_check("Continuous?: ", yes_no_for_string_check)
+    print()
+    continuous = string_check("Would you like to answer questions continuously?:", yes_no_for_string_check)
     if continuous == "no":
-        questions_to_ask = intcheck("Amount of questions?: ", 1)  # Here the user chooses a specific amount of questions
+        questions_to_ask = intcheck("Then how many questions do you want to answer: ", 1)  # Here the user chooses a specific amount of questions
         # Display how many questions the user chose
         print("You have chosen to do {} questions".format(questions_to_ask))
     else:
         questions_to_ask = 1  # Sets up the variable questions to ask for later use
         print("you have chosen continuous")  # Display to user that they have chosen continuous
 
+    # Tells the user that they can exit at any point using the exit code
+
+    qq_statement("!!! At any time when you are answering questions you can put in 1111 instead of an answer to immediately exit. !!!", "!")
+
+    input("Press <enter> to continue")
     questions_answered = 0  # Reset questions answered to 0
     # Loops questions until user has answered the amount of questions chosen
     while questions_answered < questions_to_ask:
@@ -194,6 +202,7 @@ while keepgoing == "yes":
     if correct_incorrect.count("Correct") == len(correct_incorrect):
         qq_statement("!!! Well Done, You answered all the questions correctly !!!","!")
 
+    print()
     keepgoing = string_check("Would you like to play again(Yes or No)", yes_no_for_string_check)
 
 print("Thank you for using the program")
