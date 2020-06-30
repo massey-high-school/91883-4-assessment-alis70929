@@ -10,23 +10,23 @@
 
 # Imports go here
 import random
-
+print("Num1 Range")
+low1 = int(input("Low"))
+high1 = int(input("High"))
+print("Num2 range")
+low2 = int(input("Low"))
+high2 = int(input("High"))
 # Main Code goes here
 
 # Ask user which times table they would like to practice ( all 12 or a specific one)
-all_or_specific = input("All Times tables?:")
-if all_or_specific == "no":
-    specific_times_table = int(input("Which Times Table?:")) # Here the user chooses a specific times table
+
 
 # Loop here for testing purposes
 for item in range(0,5):
     # Sets the first number in the equation
-    if all_or_specific == "no":
-        num1 = specific_times_table # The first number in the equation will be the chosen times table if the user chose to do so
-    else:
-        num1 = random.randint(1, 12) # Random if the user chose to do all 12 at once
 
-    num2 = random.randint(1,12) # The second number in the equation will always be random
+    num1 = random.randint(low1,high1) # The first number in the equation will be the chosen times table if the user chose to do so
+    num2 = random.randint(low2,high2) # The second number in the equation will always be random
 
     # Calclulating the answer to the generated question
     actual_answer = num1 * num2

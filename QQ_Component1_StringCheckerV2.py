@@ -30,14 +30,6 @@ def string_check(question, to_check):
 
 yes_no_for_string_check = ["yes","no"] # This is a list to enter into the string checker function
 
-# Ask user question and check if answer is yes or no
-times_table_all = string_check("Would you like to do all 12 times tables at once?", yes_no_for_string_check)
-# Gives Appropiate feedback based on users response
-if times_table_all == "yes":
-    print("You have chosen to practice all times tables at once")
-else:
-    print("You have chosen to do a specific times tables")
-print()
 
 # Ask user question and check if answer is yes or no
 continuous = string_check("Would you like to answer questions continuously?", yes_no_for_string_check)
