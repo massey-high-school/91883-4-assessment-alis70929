@@ -24,10 +24,12 @@ def string_check(question, to_check):
         print("Please enter Yes/No")
 
 
-yes_no_for_string_check = ["yes","no"]
-print("********* Welcome to the times tables practice program ********* ")
+yes_no_for_string_check = ["yes","no"] # List for string checker
+print("********* Welcome to the times tables practice program ********* ") # Nice title/welcome displayed
+# Ask the user if they want to read instructions
 introduction = string_check("Would you like to read the instructions(Recommended for first time users)",
                             yes_no_for_string_check)
+# If answer is yes then display introduction if not then continue on with the main code
 if introduction == "yes":
     print()
     print("Instructions \n"

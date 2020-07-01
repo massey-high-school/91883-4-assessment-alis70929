@@ -5,6 +5,7 @@
 
 
 # Functions go here
+# gives statements a border of selected character
 def qq_statement(statement, char):
     print()
     print(char*len(statement))
@@ -14,9 +15,9 @@ def qq_statement(statement, char):
 
 
 # Main Code here
-qq_statement("| You got it right, Good Job |", "-")
+qq_statement("| You got it right, Good Job |", "-")  # Correct feedback statement
 
-qq_statement("XXX You got it wrong the right answer is 27 XXX", "X")
+qq_statement("XXX You got it wrong the right answer is 27 XXX", "X")  # Incorrect feedback statement
 
-qq_statement("### Question 1 ###", "#")
+qq_statement("### Question 1 ###", "#") # Question statement
 

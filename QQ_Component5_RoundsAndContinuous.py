@@ -60,25 +60,30 @@ def intcheck(question, low=None, high=None):
             print()
 
 # Main code here
-yes_no_for_string_check = ["yes","no"]
-continuous = string_check("Continuous?: ", yes_no_for_string_check)
+yes_no_for_string_check = ["yes","no"] # list for string checker
+continuous = string_check("Continuous?: ", yes_no_for_string_check) # Checks if answer for continuous is yes or no
+# Depending on answer to the question above display appropiate response
 if continuous == "no":
-    questions_to_ask = intcheck("Amount of questions?: ", 1)
-    print("You have chosen to do {} questions".format(questions_to_ask))
+    questions_to_ask = intcheck("Amount of questions?: ", 1) # Set the amount of questions user wants to answer
+    print("You have chosen to do {} questions".format(questions_to_ask)) # Display the amount of questions they want to answer
 else:
-    questions_to_ask = 1
-    print("you have chosen continuous")
+    questions_to_ask = 1 # Sets the variable to be used later
+    print("you have chosen continuous")# Appropiate feedback
 
-questions_answered = 0
+# Loop for amount of questions the user wants to answer or continuously
+questions_answered = 0 # stores how many questions the user has answered
 while questions_answered < questions_to_ask:
+    # If continuous was chosen make sure questions answered never catches up to questions to answer ore else the loop will stop
     if continuous == "yes":
         questions_to_ask += 1
-    questions_answered += 1
-    print("Question {}".format(questions_answered))
-    user_answer = intcheck("What is your answer?")
+    questions_answered += 1 # adds this question to questions answeres
+    print("Question {}".format(questions_answered)) # displays what question the user is on
+    user_answer = intcheck("What is your answer?") # Ask user for their answer
+    # User enters 1111 then cut out of loop
     if user_answer == 1111:
         questions_answered = questions_to_ask
 
+# A nice farewleel message
 print("Thank you for playing")
 
 

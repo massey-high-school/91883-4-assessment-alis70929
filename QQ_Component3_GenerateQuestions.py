@@ -25,8 +25,8 @@ high2 = int(input("High"))
 for item in range(0,5):
     # Sets the first number in the equation
 
-    num1 = random.randint(low1,high1) # The first number in the equation will be the chosen times table if the user chose to do so
-    num2 = random.randint(low2,high2) # The second number in the equation will always be random
+    num1 = random.randint(low1,high1) # The first number in the equation will be randomly generated between the range given above for num 1
+    num2 = random.randint(low2,high2) # The second number in the equation will always be random between the range given above for num 2
 
     # Calclulating the answer to the generated question
     actual_answer = num1 * num2

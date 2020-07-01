@@ -44,8 +44,8 @@ def intcheck(question, low = None, high = None):
 loop = True
 while loop:
     # What times table would you like to do question
-    lowest_multiple = intcheck("Lowest Multiple?:", 1)
-    highest_multiple = intcheck("Highest Multiple?:",lowest_multiple)
+    lowest_multiple = intcheck("Lowest Multiple?:", 1) # Lowest number generated
+    highest_multiple = intcheck("Highest Multiple?:",lowest_multiple) # highest number generated
     if lowest_multiple == highest_multiple:
         print("So you have chosen to do the {} times tables".format(lowest_multiple))
     else:
