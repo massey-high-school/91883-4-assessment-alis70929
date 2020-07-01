@@ -91,7 +91,7 @@ if introduction == "yes":
     print()
     print("Instructions \n"
           "- You can chose the range of numbers of each side of the question \n"
-          "- If you want to do one times tables put the lowest and highest of one side of the equation as the same number\n"
+          "- If you want to do one times table put the lowest and highest of one side of the equation as the same number\n"
           "- You can chose to answer questions continuously or set a certain amount of questions you want to answer \n"
           "- You then have to answer questions until you answer all the questions given or if you enter the exit code(1111)")
     print()
