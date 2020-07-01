@@ -81,7 +81,7 @@ def qq_statement(statement, char):
 yes_no_for_string_check = ["yes", "no"]
 
 # Introduction
-print("********* Welcome to the 12 times tables practice program ********* ") # Title
+print("********* Welcome to the times tables practice program ********* ") # Title
 # Asks if they want to read the instructions
 introduction = string_check("Would you like to read the instructions(Recommended for first time users)",
                             yes_no_for_string_check)
@@ -90,10 +90,12 @@ introduction = string_check("Would you like to read the instructions(Recommended
 if introduction == "yes":
     print()
     print("Instructions \n"
-          "- You can chose to practice all tweleve times tables or practice a specific times table \n"
+          "- You can chose the range of numbers of each side of the question \n"
+          "- If you want to do one times tables put the lowest and highest of one side of the equation as the same number\n"
           "- You can chose to answer questions continuously or set a certain amount of questions you want to answer \n"
           "- You then have to answer questions until you answer all the questions given or if you enter the exit code(1111)")
     print()
+    # Stops the rest of the code appearing so that the user can read the instructions
     input("Press <enter> to continue")
 
 # Loops code until the user dosent want to play again
@@ -106,14 +108,15 @@ while keepgoing == "yes":
     correct_incorrect = []  # Stores if they were correct or incorrect
 
     print()
-    # Ask user which times table they would like to practice ( all 12 or a specific one)
-    all_or_specific = string_check("Do you want to practice all 12 times tables:", yes_no_for_string_check)
-    if all_or_specific == "no":
-        specific_times_table = intcheck("Then which times table do you wish to practice?(1 - 12):", 1, 12)  # Here the user chooses a specific times table
-        # Displays which times table they chose
-        print("You have chosen to do the {} times tables".format(specific_times_table))
-    else:
-        print("You have chosen to do all times tables")  # Displays if they have chosen all times table
+
+    # Ask user the range of each number in the question
+    print("What range of numbers would you like the left number in the question to be")
+    low1 = intcheck("Lowest possible number:",1)
+    high1 = intcheck("Highest possible number:",low1)
+    print()
+    print("What range of numbers would you like the right number in the question to be")
+    low2 = intcheck("Lowest possible number:", 1)
+    high2 = intcheck("Highest possible number:", low2)
 
     # Ask user wheher they want to answer questions continuously or a specific amount
     print()
@@ -143,14 +146,10 @@ while keepgoing == "yes":
 
         # Says what question the user is on
         qq_statement("### Question {} ###".format(questions_answered), "#")
-        # Sets the first number in the equation
-        if all_or_specific == "no":
-            # The first number in the equation will be the chosen times table if the user chose to do so
-            num1 = specific_times_table
-        else:
-            num1 = random.randint(1, 12)  # Random between 1 -12 if the user chose to do all 12 at once
 
-        num2 = random.randint(1, 12)  # The second number in the equation will always be random between 1 - 12
+        # Ssts number in the equations
+        num1 = random.randint(low1,high1)  # The first number in the equation randomly generated
+        num2 = random.randint(low2, high2)  # The second number in the equation
 
         # Calculating the answer to the generated question
         actual_answer = num1 * num2
@@ -199,10 +198,12 @@ while keepgoing == "yes":
     print("{}/{} questions were answered incorrectly".format(correct_incorrect.count("Incorrect"), len(correct_incorrect)))
     print("{}/{} questions were answered correctly".format(correct_incorrect.count("Correct"),len(correct_incorrect)))
 
+    # Give them nice feedback if they get it all correct
     if correct_incorrect.count("Correct") == len(correct_incorrect):
         qq_statement("!!! Well Done, You answered all the questions correctly !!!","!")
 
     print()
+    # ask user if they want to use the program again
     keepgoing = string_check("Would you like to play again(Yes or No)", yes_no_for_string_check)
 
 print("Thank you for using the program")

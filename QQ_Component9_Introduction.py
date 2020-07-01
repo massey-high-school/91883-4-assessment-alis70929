@@ -25,14 +25,16 @@ def string_check(question, to_check):
 
 
 yes_no_for_string_check = ["yes","no"]
-print("********* Welcome to the 12 times tables practice program ********* ")
+print("********* Welcome to the times tables practice program ********* ")
 introduction = string_check("Would you like to read the instructions(Recommended for first time users)",
                             yes_no_for_string_check)
 if introduction == "yes":
     print()
     print("Instructions \n"
-          "- You can chose to practice all tweleve times tables or practice a specific times table \n"
+          "- You can chose the range of numbers of each side of the question \n"
+          "- If you want to do one times tables put the lowest and highest of one side of the equation as the same number\n"
           "- You can chose to answer questions continuously or set a certain amount of questions you want to answer \n"
           "- You then have to answer questions until you answer all the questions given or if you enter the exit code(1111)")
     print()
+    # Stops the rest of the code appearing so that the user can read the instructions
     input("Press <enter> to continue")
